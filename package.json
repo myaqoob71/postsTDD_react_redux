@@ -1,0 +1,40 @@
+{
+  "name": "poststdd_react_redux",
+  "version": "1.0.0",
+  "description": "The purpose of this project is to demonstrate how to properly implement a test first approch (TDD) with react and redux.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myaqoob71/postsTDD_react_redux.git"
+  },
+  "author": "Yaqoob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myaqoob71/postsTDD_react_redux/issues"
+  },
+  "homepage": "https://github.com/myaqoob71/postsTDD_react_redux#readme",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

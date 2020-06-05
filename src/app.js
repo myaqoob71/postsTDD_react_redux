@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Header from './components/header';
 import Headline from './components/headline';
 import './app.css';
@@ -24,4 +23,4 @@ class App extends React.Component {
         );
     }
 }
-ReactDOM.render(<App />,document.getElementById("app"));
+export default App;

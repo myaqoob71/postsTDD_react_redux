@@ -112,4 +112,5 @@ So with this, you won’t have to worry about whether you have given the same cl
 Note: If not configured then it throws   TypeError: Cannot read property 'find' of undefined
 33. Install prop-types to check in the component(data type check) as a dependency using the command   npm i --save prop-types
 34. Install check-prop-types to check prop-types in testing as a dev-dependency using the command   npm i check-prop-types -D
-35. 
+35. Install redux, react-redux and redux-thunk as dependencies using the command  npm i redux react-redux redux-thunk
+36. 

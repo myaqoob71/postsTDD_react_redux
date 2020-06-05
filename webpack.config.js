@@ -5,7 +5,8 @@ const htmlPlugin = new HtmlWebPackPlugin({
   filename: "./index.html"
 });
 module.exports = {
-    entry: './src/app.js',
+    /* add this below entry point if starting point of application is different from /src/index.js */
+    // entry: './src/app.js',
     module: {
       rules: [
         {

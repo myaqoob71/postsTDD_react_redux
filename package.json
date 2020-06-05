@@ -8,6 +8,9 @@
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
+  "jest":{
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/myaqoob71/postsTDD_react_redux.git"
@@ -26,6 +29,7 @@
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-react": "^7.10.1",
+    "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",

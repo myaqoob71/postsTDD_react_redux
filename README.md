@@ -54,6 +54,7 @@ Babel on the other hand must be configured to use presets. We need two of them:
 18. Now run the command  npm run build  which creates a /dist/ folder including index.html and main.js
 19. If you now run   npm run start    you should see localhost:8080 open up in your default browser — that’s what the —-open flag is for. Now everytime you make changes, it will refresh the page. You can also add a --hot flag to your npm start script which will allow you to only reload the component that you’ve changed instead of doing a full page reload.
 20. As we will be importing CSS files into our React components, we need css-loader module to resolve them. Once that’s resolved, we also need a style-loader to inject this into our DOM — adding a <style> tag into the <head> element of our HTML. Add a dev-dependency using the command     npm i css-loader style-loader -D
+Note that the order of adding these loaders is important. First, we need to resolve the CSS files before adding them to the DOM with the style-loader. By default, webpack uses the loaders from the right (last element in the array) to the left (first element in the array).
 21. Webpack 4 by default has a default entry point of   index.js  in your src folder. If you would like to point to a different file, you can do so by specifying an entry point in your webpack config file as  "./src/app.js".
 22. Install Jest which is a JS test runner and helpful for adding assertions.Use the command to add it is as dev-dependency                      npm install --save-dev jest
 23. Install Enzyme which is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output. Use the command  npm i --save-dev enzyme
@@ -63,3 +64,50 @@ Babel on the other hand must be configured to use presets. We need two of them:
     import Enzyme from 'enzyme';
     import EnzymeAdapter from 'enzyme-adapter-react-16';
     Enzyme.configure({adapter : new EnzymeAdapter()});
+27. Create a components folder -> header component folder  -> index.js
+28. Create app.scss file in src folder
+29. Install node-sass package for writing Sass files using the command  npm i node-sass -D
+30. To make CSS modular using webpack this means class name will be scoped locally and specific to only the component in question.Add below configurations in webpack config file
+    {
+            test: /\.css$/,
+            use: [
+            {
+                loader: "style-loader"
+            },
+            {
+                loader: "css-loader",
+                options: {
+                modules: true,
+                importLoaders: 1,
+                localIdentName: "[name]_[local]_[hash:base64]",
+                sourceMap: true,
+                minimize: true
+                }
+            }
+            ]
+    }
+As we need to give options, each loader is now an object with a key-value pair. To enable CSS modules, we need to set module option for css-loader to be true. The importLoaders option configures how many loaders before css-loader should be applied. For example, sass-loader would have to come before css-loader.
+
+The localIdentName allows you to configure the generated identification.
+
+[name] will take the name of your component
+[local] is the name of your class/id
+[hash:base64] is the randomly generated hash which will be unique in every component’s CSS
+To make this a bit more visual, I’ll give you an example. Say I have a component named Form and I have a button with a CSS class primaryButton. I also have another component called Search and a button in it with a CSS class primaryButton. However, both of these classes have different CSS:
+
+Form button.primaryButton {
+  background-color: green;
+}
+Search button.primaryButton {
+  background-color: blue;
+}
+When webpack bundles your application, depending on which CSS comes latest, both of your buttons could have the color green or blue instead of Form having green and Search having blue.
+As you can see, the button class name in the Form component is different to the one in the Search component — their naming starts with the name of the component, class name, and unique hash code.
+So with this, you won’t have to worry about whether you have given the same class name throughout your whole application — you only have to worry about whether you have used it in the same component.
+31. Install babel-jest and it will automatically compile JavaScript code using Babel, the command used is  npm i babel-jest -D
+32. Place setupTests.js inside src folder and add the jest configuration in package.json provided below
+    "jest":{
+        "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+    }
+Note: If not configured then it throws   TypeError: Cannot read property 'find' of undefined
+33. 

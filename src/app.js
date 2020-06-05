@@ -4,6 +4,14 @@ import Header from './components/header';
 import Headline from './components/headline';
 import './app.css';
 
+const tempArr = [{
+    fName: "M",
+    lName: "Yaqoob",
+    email: "myaqoob71@gmail.com",
+    age: 28,
+    onlineStatus: true
+}];
+
 class App extends React.Component {
     render() {
         return (

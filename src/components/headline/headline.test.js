@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Headline from './index';
-import { findByTestAttr } from '../../utils';
+import { findByTestAttr, checkProps } from '../../utils';
 
 /* Class component testing */
 const setUp = (props={}) => {
@@ -12,6 +12,26 @@ const setUp = (props={}) => {
 describe('Headline Component', () => {
 
     /* Nested describe functions */
+    describe('Checking prop types', () => {
+        it('should not throw warnings', () => {
+            const expectedProps = {
+                header: "Test header",
+                desc: "Test desc",
+                tempArr: [{
+                    fName: "Test fname",
+                    lName: "Test lname",
+                    email: "test@gmail.com",
+                    age: 28,
+                    onlineStatus: false
+
+                }]
+            };
+            const propsErr = checkProps(Headline, expectedProps);
+            /*  use JEST's expect method along with a "matcher" function to assert something about a value */
+            expect(propsErr).toBeUndefined();
+        });
+    });
+
     describe('Has props', () => {
 
         let wrapper;

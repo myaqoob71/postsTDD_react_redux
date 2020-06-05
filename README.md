@@ -110,4 +110,6 @@ So with this, you won’t have to worry about whether you have given the same cl
         "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
     }
 Note: If not configured then it throws   TypeError: Cannot read property 'find' of undefined
-33. 
+33. Install prop-types to check in the component(data type check) as a dependency using the command   npm i --save prop-types
+34. Install check-prop-types to check prop-types in testing as a dev-dependency using the command   npm i check-prop-types -D
+35. 

@@ -113,4 +113,6 @@ Note: If not configured then it throws   TypeError: Cannot read property 'find' 
 33. Install prop-types to check in the component(data type check) as a dependency using the command   npm i --save prop-types
 34. Install check-prop-types to check prop-types in testing as a dev-dependency using the command   npm i check-prop-types -D
 35. Install redux, react-redux and redux-thunk as dependencies using the command  npm i redux react-redux redux-thunk
-36. 
+36. Create reducers folder, then create two files one is a successReducer.js and another is index.js. In index file of reducers use combineReducers method to add reducers.
+37. Create a file named as createStore.js in src folder, add middlewares and create a store with middlewares like redux-thunk.
+38. Inside index.js main file import Provider and store for rendering the application.

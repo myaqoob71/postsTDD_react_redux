@@ -8,8 +8,10 @@
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
-  "jest":{
-    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>src/setupTests.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/myaqoob71/postsTDD_react_redux#readme",
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -31,6 +34,7 @@
     "@babel/preset-react": "^7.10.1",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
+    "check-prop-types": "^1.1.2",
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",

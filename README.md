@@ -104,13 +104,45 @@ Search button.primaryButton {
 When webpack bundles your application, depending on which CSS comes latest, both of your buttons could have the color green or blue instead of Form having green and Search having blue.
 As you can see, the button class name in the Form component is different to the one in the Search component — their naming starts with the name of the component, class name, and unique hash code.
 So with this, you won’t have to worry about whether you have given the same class name throughout your whole application — you only have to worry about whether you have used it in the same component.
+
 31. Install babel-jest and it will automatically compile JavaScript code using Babel, the command used is  npm i babel-jest -D
+
 32. Place setupTests.js inside src folder and add the jest configuration in package.json provided below
     "jest":{
         "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
     }
 Note: If not configured then it throws   TypeError: Cannot read property 'find' of undefined
+
 33. Install prop-types to check in the component(data type check) as a dependency using the command   npm i --save prop-types
+
 34. Install check-prop-types to check prop-types in testing as a dev-dependency using the command   npm i check-prop-types -D
+
 35. Install redux, react-redux and redux-thunk as dependencies using the command  npm i redux react-redux redux-thunk
-36. 
+
+36. Create reducers folder, then create two files one is a postsReducer.js and another is index.js. In index file of reducers use combineReducers method to add reducers.
+
+37. Create a file named as createStore.js in src folder, add middlewares and create a store with middlewares like redux-thunk.
+
+38. Inside index.js main file import Provider and store for rendering the application.
+
+39. Create postsReducer.test.js to test posts reducer
+
+40. Create actions folder under src folder, then add types.js to add constants for action type.
+
+41. Axios used to create asynchronous requests, moxios used in integration tests to mock response from the API's.
+
+42. Create a button component with unit tests.
+
+43. Create actions for the button with unit tests.
+
+44. Install axios as dev-dependency using the command  npm i axios -D
+
+45. Easiest way to fix this 'regeneratorRuntime not defined issue' in your console:
+You don't have to install any unnecessary plugins. Just add:
+<script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
+inside of the body in your index.html. Now regeneratorRuntime should be defined once you run babel and now your async/await functions should be compiled successfully into ES2015.
+
+46. If you get this error -> Uncaught Error: Actions must be plain objects. Use custom middleware for async actions.
+Then change the way how actions dispatch using async/await like   export const fetchPosts = () => async dispatch {}
+
+47. Install moxios as a dev-dependency using the command  npm i moxios -D

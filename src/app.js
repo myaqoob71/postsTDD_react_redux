@@ -5,7 +5,7 @@ import Button from './components/button';
 import ListItems from './components/listItems';
 import { fetchPosts } from './actions';
 import { connect } from 'react-redux';
-import './app.css';
+// import './app.css';
 
 const tempArr = [{
     fName: "M",
@@ -30,7 +30,7 @@ class App extends React.Component {
             emitEvent: this.fetch
         }
         return (
-            <div className = "App">
+            <div data-test="appComponent">
                 <Header />
                 <section className = "main">
                     <Headline header = "Posts" desc = "Click the button to render posts" />

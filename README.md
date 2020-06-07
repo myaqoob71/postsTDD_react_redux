@@ -112,6 +112,7 @@ So with this, you won’t have to worry about whether you have given the same cl
         "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"]
     }
 Note: If not configured then it throws   TypeError: Cannot read property 'find' of undefined
+Some alternatives are run command  npm cache verify
 
 33. Install prop-types to check in the component(data type check) as a dependency using the command   npm i --save prop-types
 
@@ -141,8 +142,23 @@ Note: If not configured then it throws   TypeError: Cannot read property 'find' 
 You don't have to install any unnecessary plugins. Just add:
 <script src="https://unpkg.com/regenerator-runtime@0.13.1/runtime.js"></script>
 inside of the body in your index.html. Now regeneratorRuntime should be defined once you run babel and now your async/await functions should be compiled successfully into ES2015.
+If the above solution doesn't work in some case then try another fix mentioned below:
+npm i @babel/plugin-transform-runtime -D
+npm i @babel/runtime
+Later add into .babelrc
+"plugins": [
+        ["@babel/plugin-transform-runtime",
+          {
+            "regenerator": true
+          }
+        ]
+      ]
 
 46. If you get this error -> Uncaught Error: Actions must be plain objects. Use custom middleware for async actions.
 Then change the way how actions dispatch using async/await like   export const fetchPosts = () => async dispatch {}
 
 47. Install moxios as a dev-dependency using the command  npm i moxios -D
+
+48. npm view <package-name> versions command is used to check package versions.
+
+49. 

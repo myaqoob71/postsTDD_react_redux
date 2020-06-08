@@ -13,6 +13,7 @@ const setUp = (initialState = {}) => {
 describe('App Component', () => {
 
     let wrapper;
+    // Before each test running the below method
     beforeEach(() => {
         const initialState = {
             posts: [{
@@ -31,5 +32,20 @@ describe('App Component', () => {
     it('Should render without errors', () => {
         const component = findByTestAttr(wrapper, 'appComponent');
         expect(component.length).toBe(1);
+    });
+    it('toggleButton method should update the state as expected', () => {
+        // Creating an instance of class
+        const classInstance = wrapper.instance();
+        classInstance.toggleButton();
+        const newState = classInstance.state.hideBtn;
+        expect(newState).toBe(true);
+    });
+
+    /* Testing increment function */
+    it('add method should update the value as expected', () => {
+        // Creating an instance of class
+        const classInstance = wrapper.instance();
+        const newValue = classInstance.add(2);
+        expect(newValue).toBe(3);
     });
 });

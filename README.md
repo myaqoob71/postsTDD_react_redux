@@ -190,4 +190,3 @@ Then change the way how actions dispatch using async/await like   export const f
 47. Install moxios as a dev-dependency using the command  npm i moxios -D
 
 48. npm view <package-name> versions command is used to check package versions.
-

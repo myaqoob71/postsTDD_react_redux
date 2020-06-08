@@ -14,17 +14,35 @@ const tempArr = [{
     age: 28,
     onlineStatus: true
 }];
+const initialState = {
+    hideBtn: false
+}
 
 class App extends React.Component {
     constructor(props){
         super(props);
+        this.state = {
+            ...initialState
+        }
         this.fetch = this.fetch.bind(this);
     }
     fetch() {
         this.props.fetchPosts();
+        this.toggleButton();
     }
+    /* Method that updates the state */
+    toggleButton() {
+        const { hideBtn } = this.state;
+        this.setState({hideBtn: !hideBtn});
+    }
+    /* Method that returns a value */
+    add(num){
+        return num + 1;
+    }
+
     render() {
         const { posts } = this.props;
+        const { hideBtn } = this.state;
         const buttonProps = {
             buttonText: 'GetPosts',
             emitEvent: this.fetch
@@ -34,7 +52,10 @@ class App extends React.Component {
                 <Header />
                 <section className = "main">
                     <Headline header = "Posts" desc = "Click the button to render posts" />
-                    <Button {...buttonProps} />
+                    {/* Hiding button if posts are already rendered */}
+                    {!hideBtn &&
+                        <Button {...buttonProps} />
+                    }
                 </section>
                 {posts.length > 0 && 
                    <div>

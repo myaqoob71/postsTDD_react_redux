@@ -3,6 +3,7 @@ Implementing a TDD approach project which shows user blog posts with ReactJS and
 
 Official documentation for Jest and Enzyme:
 https://jestjs.io/docs/en/getting-started
+
 https://enzymejs.github.io/enzyme/
 
 To setup the project from scratch with Webpack, Babel, React, Jest, Enzyme:

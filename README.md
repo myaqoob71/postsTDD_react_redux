@@ -2,6 +2,7 @@
 Implementing a TDD approach project which shows user blog posts with ReactJS and Redux. The Test Driven Development (TDD) utilizes Jest and Enzyme tools for testing.
 
 Official documentation for Jest and Enzyme:
+
 https://jestjs.io/docs/en/getting-started
 
 https://enzymejs.github.io/enzyme/
@@ -191,3 +192,15 @@ Then change the way how actions dispatch using async/await like   export const f
 47. Install moxios as a dev-dependency using the command  npm i moxios -D
 
 48. npm view <package-name> versions command is used to check package versions.
+    
+49. Some git commands used while commiting and push code to this repository are
+    . git status
+    . git pull
+    . git checkout -b new_branch_name
+    . git branch -a
+    . git branch -d
+    . git add *
+    . git reset HEAD file_name  /* remove file which was added */
+    . git commit -m "comments"
+    . git push origin feature_branch_name  /* push files to origin/master branch */
+

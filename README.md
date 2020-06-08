@@ -191,3 +191,19 @@ Then change the way how actions dispatch using async/await like   export const f
 
 48. npm view <package-name> versions command is used to check package versions.
 
+49. Adding git hooks using husky(Husky can prevent bad git commit, git push) npm package using the below commands and configuration
+
+    npm install husky --save-dev
+
+    In package.json, add the below configuration (CI=true is used to disable watcher on npm test)
+    {
+        "husky": {
+            "hooks": {
+            "pre-commit": "npm test",
+            "pre-push": "CI=true npm test",
+            }
+        }
+    }
+
+50. Using git hooks in the project will initially run all the tests before git commit or push.
+
